@@ -25,5 +25,32 @@ public class BinaryTree {
 		return false;
 	}
 	
+	//insert the element into the binary search tree
+	public void insert(int e) {
+		Node newNode = new Node(e);
+		if (root == null) {
+			root = newNode;
+			return;
+		}
+		Node current = root;
+		Node parent = null;
+		while (true) {
+			parent = current;
+			if (e < current.data) {
+				current = current.left;
+				if (current == null) {
+					parent.left = newNode;
+					return;
+				}
+			} else {
+				current = current.right;
+				if (current == null) {
+					parent.right = newNode;
+					return;
+				}
+			}
+		}
+	}
+	
 
 }
