@@ -1,3 +1,4 @@
+//U10416022
 public class BinaryTree {
 	public static Node root;
 	
@@ -51,6 +52,14 @@ public class BinaryTree {
 			}
 		}
 	}
-	
 
+	
+	//display method
+	public void display(Node root) {
+		if (root != null) {
+			display(root.left);
+			System.out.print(" " + root.data);
+			display(root.right);
+		}
+	}
 }
